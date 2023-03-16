@@ -55,5 +55,4 @@ app.use(function(req, res) {
 
 app.listen(1990);
 
-module.exports = app;
 
