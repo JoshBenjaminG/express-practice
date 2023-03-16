@@ -1,0 +1,27 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="../styles/style-min.css">
+</head>
+<body>
+
+<header> header </header>
+
+<h1>Dog Details</h1>
+
+<div>
+  <h2>Name: <?= dog.name ?></h2>
+  <p>Age: <?= dog.age ?></p>
+  <p>Color: <?= dog.color ?></p>
+  <? if (dog.adopted) { ?>
+    <p>Has been adopted!</p>
+  <? } else { ?>
+    <p>Available for adoption</p>
+  <? } ?>
+</div>
+
+<?- include('menu'); ?>
+
+<?- include('footer'); ?>

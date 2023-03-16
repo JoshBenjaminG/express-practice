@@ -1,10 +1,18 @@
 import express from 'express';
 
+import ejs from 'ejs';
+
 const app = express();
 
+
+
+ejs.delimiter = '?';
 app.set('view engine', 'ejs');
 
 app.use(express.static('public'));
+
+
+
 
 const dogs = [
 		{
@@ -33,6 +41,12 @@ app.get('/', function(req, res) {
 
 app.get('/about', function(req, res) {
 	res.render('about');
+});
+
+app.get('/dogs/:id', function(req, res) {
+	const id = req.params.id;
+	const dog = dogs[id];
+	res.render('dogDetail', {dog});
 });
 
 app.use(function(req, res) {

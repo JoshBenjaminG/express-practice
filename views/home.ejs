@@ -1,26 +1,27 @@
-<%- include('header'); %>
+<?- include('header'); ?>
 
 <h1>Homepage</h1>
 
 <p>Welcome to the dog house</p>
 
 <ul>
-<% dogs.forEach(function(dog) { %>
-	<li class="<%= dog.color %>">
-		<p>name: <%= dog.name %></p>
-		<p>age: <%= dog.age %></p>
-		<p>color: <%= dog.color %></p>
-		<% if(dog.adopted == true) { %>
-			<p>Has been adopted!</p>
-		<% } %>
-	</li>
-<% }); %>
+  <? dogs.forEach(function(dog, index) { ?>
+    <li class="<?= dog.color ?>">
+      <p>name: <?= dog.name ?></p>
+      <p>age: <?= dog.age ?></p>
+      <p>color: <?= dog.color ?></p>
+      <? if(dog.adopted == true) { ?>
+        <p>Has been adopted!</p>
+      <? } ?>
+      <a href="/dogs/<?= index ?>">View details</a>
+    </li>
+  <? }); ?>
 </ul>
 
 
-<%- include('menu'); %>
+<?- include('menu'); ?>
 
-<%- include('footer'); %>
+<?- include('footer'); ?>
 
 
 
